@@ -3,12 +3,19 @@ import { useState } from "react";
 function ChatCreationForm({ inputType, onChatSubmit }) {
   const [inputValue, setInputValue] = useState("");
 
+  const handleChange = (e) => {
+    const targetValue = e.target.value;
+
+    const onlyDigits = targetValue.replace(/\D/g, "");
+
+    setInputValue(onlyDigits);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const trimmedValue = inputValue.trim();
-    if (!trimmedValue) return;
+    if (!inputValue) return;
 
-    onChatSubmit(trimmedValue);
+    onChatSubmit(inputValue);
     setInputValue("");
   };
 
@@ -17,9 +24,9 @@ function ChatCreationForm({ inputType, onChatSubmit }) {
       <input
         type="text"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={handleChange}
         placeholder={
-          inputType === "phone" ? "Например, 79876543210" : "Например, 12345678"
+          inputType === "phone" ? "Например, 79876543210" : "Например, 10000000"
         }
       />
       <button type="submit">Открыть чат</button>

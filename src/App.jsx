@@ -9,7 +9,7 @@ function App() {
     <div className="app-container">
       {!credentials ? (
         <div className="auth-card">
-          <h2>Вход в GREEN-API</h2>
+          <h2>Вход в Chat Max</h2>
           <AuthForm onLogin={(data) => setCredentials(data)} />
         </div>
       ) : (
