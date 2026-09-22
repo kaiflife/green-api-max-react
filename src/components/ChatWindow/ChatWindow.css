@@ -1,0 +1,15 @@
+.chat-area {
+  width: 68%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f7; /* Чистый светло-серый фон вместо бежевого ватсапа */
+}
+
+.chat-empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #8e8e93;
+  font-size: 15px;
+}

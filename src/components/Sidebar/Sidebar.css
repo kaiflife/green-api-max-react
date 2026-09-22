@@ -1,0 +1,186 @@
+/* src/components/Sidebar.css */
+
+.sidebar {
+  width: 32%;
+  border-right: 1px solid #e5e5ea;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #0b1f35;
+  font-size: 18px;
+}
+
+/* Переключатели типов ввода */
+.sidebar-radio-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.sidebar-radio-label {
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+}
+
+/* Форма добавления чата */
+.sidebar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d1d6;
+  font-size: 14px;
+}
+
+.sidebar-form button {
+  padding: 10px;
+  background-color: #0b1f35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.sidebar-form button:hover {
+  background-color: #1c3d5a;
+}
+
+/* Секция списка чатов */
+.chats-section {
+  margin-top: 24px;
+}
+
+.chats-section h4 {
+  margin: 0 0 10px 0;
+  color: #636366;
+  font-size: 14px;
+}
+
+.chats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+/* Интерактивные кнопки чатов в списке */
+.chat-list-btn {
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e5e5ea;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  word-break: break-all;
+  transition:
+    background-color 0.2s,
+    font-weight 0.2s;
+  color: #1c1c1e;
+  font-family: inherit;
+}
+
+.chat-list-btn:hover {
+  background-color: #f2f2f7;
+}
+
+.chat-list-btn.active {
+  background-color: #e5e5ea;
+  font-weight: 600;
+  border-color: #d1d1d6;
+}
+
+/* Футер сайдбара */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5ea;
+}
+
+.sidebar-footer p {
+  font-size: 12px;
+  color: #8e8e93;
+  margin: 0 0 12px 0;
+}
+
+.btn-danger {
+  padding: 8px 14px;
+  background: #ff3b30;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-danger {
+  padding: 8px 14px;
+  background: #ff3b30;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #d63026;
+}
+
+/* Контейнер для кнопки чата и кнопки удаления */
+.chat-list-item-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Растягиваем саму кнопку чата на всю ширину с отступом под крестик */
+.chat-list-item-wrapper .chat-list-btn {
+  width: 100%;
+  padding-right: 35px;
+}
+
+/* Кнопка удаления (крестик) */
+.btn-delete-chat {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #8e8e93;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  user-select: none;
+}
+
+.btn-delete-chat:hover {
+  background-color: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+}
