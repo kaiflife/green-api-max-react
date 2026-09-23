@@ -29,7 +29,17 @@ export const createGreenApi = (idInstance, apiTokenInstance) => {
           body: JSON.stringify({ chatId, message }),
         },
       );
-      if (!response.ok) throw new Error("Failed to send message");
+
+      if (!response.ok) {
+        const data = await response.json();
+
+        const errorDescription =
+          data?.invokeStatus?.description ||
+          data?.correspondentsStatus?.description ||
+          `Ошибка сервера (Статус: ${response?.status})`;
+
+        throw new Error(errorDescription);
+      }
       return response.json();
     },
 
@@ -49,6 +59,7 @@ export const createGreenApi = (idInstance, apiTokenInstance) => {
         },
       );
       if (!response.ok) throw new Error("Failed to delete notification");
+
       return response.json();
     },
   };

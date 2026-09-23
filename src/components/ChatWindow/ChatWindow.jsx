@@ -72,7 +72,7 @@ function ChatWindow({ credentials, onLogout }) {
         [activeChat]: [...(prev[activeChat] || []), newMessage],
       }));
     } catch (error) {
-      alert("Не удалось отправить сообщение. Проверьте консоль.");
+      alert(error);
     }
   };
 
